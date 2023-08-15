@@ -60,8 +60,16 @@ function CreateNote({ handleNoteSubmit }: Props) {
           <p className="text-danger">Description is required</p>
         )}
       </div>
-      <div>
-        <input type="color" defaultValue="#ddefef" {...register("bgColor")} />
+      <div className="mb-3">
+        <label htmlFor="color" className="form-label me-3">
+          Choose background color to note
+        </label>
+        <input
+          type="color"
+          id="color"
+          defaultValue="#ddefef"
+          {...register("bgColor")}
+        />
       </div>
 
       <button type="submit" className="btn btn-primary">

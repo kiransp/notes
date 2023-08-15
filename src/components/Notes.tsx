@@ -12,7 +12,7 @@ const Notes = ({ notes, handleDelete }: Props) => {
         <div
           className="card mt-3 mx-3"
           key={note.id}
-          style={{ backgroundColor: note.bgColor, width: "30%" }}
+          style={{ backgroundColor: note.bgColor }}
         >
           <div className="card-body">
             <h5 className="card-title">{note.title}</h5>
