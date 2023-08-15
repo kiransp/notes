@@ -10,7 +10,7 @@ const Notes = ({ notes, handleDelete }: Props) => {
     <>
       {notes.map((note) => (
         <div
-          className="card mt-3 mx-3"
+          className="card mt-3 me-3"
           key={note.id}
           style={{ backgroundColor: note.bgColor }}
         >
