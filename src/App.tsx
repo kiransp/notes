@@ -8,6 +8,8 @@ export interface Note {
   id: string;
   title: string;
   description: string;
+  date: string;
+  bgColor: string;
 }
 function App() {
   const [notes, setNotes] = useState<Note[]>([]);
@@ -15,6 +17,7 @@ function App() {
   function onDelete(note: Note) {
     setNotes(notes.filter((n) => (n.id !== note.id ? note : null)));
   }
+
   return (
     <>
       <NavBar />

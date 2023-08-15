@@ -6,6 +6,8 @@ interface FormProps {
   id: string;
   title: string;
   description: string;
+  date: string;
+  bgColor: string;
 }
 
 interface Props {
@@ -25,12 +27,13 @@ function CreateNote({ handleNoteSubmit }: Props) {
   function onSubmit(data: FormProps) {
     const temp = { ...data };
     temp["id"] = id;
+    temp["date"] = new Date().toString();
     handleNoteSubmit(temp);
     reset();
   }
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <h2>Create a note</h2>
+      <h2 className="mt-3">Create a note</h2>
       <div className="mb-3">
         <label htmlFor="title" className="form-label">
           Title
@@ -57,6 +60,10 @@ function CreateNote({ handleNoteSubmit }: Props) {
           <p className="text-danger">Description is required</p>
         )}
       </div>
+      <div>
+        <input type="color" defaultValue="#ddefef" {...register("bgColor")} />
+      </div>
+
       <button type="submit" className="btn btn-primary">
         Submit
       </button>
